@@ -1,0 +1,7 @@
+include(Gcmake.functions)
+include(Gcmake.variables)
+include(Gcmake.environments)
+include(Gcmake.parse)
+include(Gcmake.toolchain)
+include(Gcmake.project)
+include(Gcmake.test)

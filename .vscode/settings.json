@@ -1,0 +1,9 @@
+{
+    "cmake.sourceDirectory": [
+        "${workspaceFolder}/gcmake-build",
+        "${workspaceFolder}/gcmake-build-test/local/gcmake-build-test-shared-library",
+        "${workspaceFolder}/gcmake-build-test/local/gcmake-build-test-executable",
+        "${workspaceFolder}/gcmake-build-test/cross/gcmake-build-test-shared-library",
+        "${workspaceFolder}/gcmake-build-test/cross/gcmake-build-test-executable"
+    ]
+}

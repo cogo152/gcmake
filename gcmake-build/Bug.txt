@@ -1,0 +1,2 @@
+1) Project contact can not be set to unicode
+2) If there is no target install fails
