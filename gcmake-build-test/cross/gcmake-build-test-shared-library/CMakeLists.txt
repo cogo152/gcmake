@@ -3,7 +3,7 @@ cmake_path(GET current_path PARENT_PATH parent_path)
 
 list(APPEND CMAKE_FIND_ROOT_PATH "${parent_path}/../gcmake-build/build/install")
 
-find_package(gcmake-build CONFIG 1.1.0 REQUIRED)
+find_package(gcmake-build CONFIG 1.1.1 REQUIRED)
 
 include(Gcmake_Begin)
 

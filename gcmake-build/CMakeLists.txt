@@ -1,10 +1,12 @@
 set(GCMAKE_CMAKE_VERSION 3.22.1)
 set(GCMAKE_PROJECT_NAMESPACE gcmake)
 set(GCMAKE_PROJECT_NAME build)
-set(GCMAKE_PROJECT_VERSION 1.1.0)
+set(GCMAKE_PROJECT_VERSION 1.1.1)
 set(GCMAKE_PROJECT_DESCRIPTION "rapid cmake application development build tool")
 set(GCMAKE_PROJECT_CONTACT "Gökay Cömert gokay.comert@icloud.com")
 set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "install directory" FORCE)
+
+set(GCMAKE_GCTEST_VERSION 1.0.1)
 
 cmake_minimum_required (VERSION ${GCMAKE_CMAKE_VERSION})
 

@@ -10,7 +10,7 @@ cmake   --no-warn-unused-cli                        \
 
 cmake   --build build                               \
         --config Release                            \
-        --target all install package                \
+        --target all test install package           \
         -j 14 --                                    \
 
-dpkg-deb -R build/package/gcmake-build-test-shared-library_1.1.0_arm64.deb build/package-extract
+dpkg-deb -R build/package/gcmake-build-test-shared-library_1.1.1_arm64.deb build/package-extract

@@ -2,3 +2,4 @@
 2) project_system_processor values x86_64 and aarch64 are valid. Check amd64 and arm32. (lscpu)
 3) project_system_package DEB is valid. Check other implementation for RPM etc. (/etc/os-release) maybe format .deb .rpm
 4) check cmake and interface compile options. Interface compile options must override cmake general options.
+5) error message valid parameters not hardcodded, message list

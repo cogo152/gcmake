@@ -45,5 +45,9 @@ function(gcmake_add_test test_name test_link_libraries)
             OUTPUT_NAME "${GCMAKE_PROJECT_NAMESPACE}-${test_name}"
     )
 
-    add_test(NAME "${GCMAKE_PROJECT_NAMESPACE}-${test_name}" COMMAND "${GCMAKE_PROJECT_NAMESPACE}-${test_name}")
+    if(${GCMAKE_CROSSCOMPILING} STREQUAL "true")
+        add_test(NAME "${GCMAKE_PROJECT_NAMESPACE}-${test_name}" COMMAND ${GCMAKE_CROSSCOMPILING_EMULATOR} ${GCMAKE_CROSSCOMPILING_EMULATOR_PARAMETERS}  "${GCMAKE_PROJECT_NAMESPACE}-${test_name}")
+    else()
+        add_test(NAME "${GCMAKE_PROJECT_NAMESPACE}-${test_name}" COMMAND "${GCMAKE_PROJECT_NAMESPACE}-${test_name}")
+    endif()
 endfunction()
