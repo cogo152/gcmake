@@ -8,22 +8,42 @@ extern const int cpp_int = 2;
 
 using namespace gctest::assertion;
 
-FUNCTION_TEST(test_public_c, 1)
+GCTEST_CASE(test_1)
 {
-    assert_equal(get_c_int(), 1);
-}
+    gctest_case_priority(test_1, 1);
 
-FUNCTION_TEST(test_private_c, 2)
-{
-    assert_equal(1, c_int);
-}
+    gctest_now
+    {
+        assert_equal(get_c_int(), 1);
+    }
+};
 
-FUNCTION_TEST(test_public_cpp, 3)
+GCTEST_CASE(test_2)
 {
-    assert_equal(2, get_cpp_int());
-}
+    gctest_case_priority(test_2, 2);
 
-FUNCTION_TEST(test_private_cpp, 4)
+    gctest_now
+    {
+        assert_equal(c_int, 1);
+    }
+};
+
+GCTEST_CASE(test_3)
 {
-    assert_equal(2, cpp_int);
-}
+    gctest_case_priority(test_3, 3);
+
+    gctest_now
+    {
+        assert_equal(get_cpp_int(), 2);
+    }
+};
+
+GCTEST_CASE(test_4)
+{
+    gctest_case_priority(test_4, 4);
+
+    gctest_now
+    {
+        assert_equal(cpp_int, 2);
+    }
+};

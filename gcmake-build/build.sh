@@ -11,4 +11,4 @@ cmake   --build build                               \
         --target install package                    \
         -j 14 --                                    \
 
-dpkg-deb -R build/package/gcmake-build_1.1.1_all.deb build/package-extract
+dpkg-deb -R build/package/gcmake-build_1.1.2_all.deb build/package-extract
