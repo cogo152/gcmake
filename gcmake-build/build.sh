@@ -11,4 +11,6 @@ cmake   --build build                               \
         --target install package                    \
         -j 14 --                                    \
 
-dpkg-deb -R build/package/gcmake-build_1.1.3_all.deb build/package-extract
+dpkg-deb -R build/package/gcmake-build_1.1.4_all.deb build/package-extract
+
+rpm2cpio build/package/gcmake-build-1.1.4-1.noarch.rpm | cpio -imvd build/package-extract

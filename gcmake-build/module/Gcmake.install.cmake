@@ -20,7 +20,7 @@ install(EXPORT "${GCMAKE_PROJECT_NAMESPACE}-${GCMAKE_PROJECT_NAME}Targets"
 
 write_basic_package_version_file("${CMAKE_BINARY_DIR}/${GCMAKE_PROJECT_NAMESPACE}-${GCMAKE_PROJECT_NAME}ConfigVersion.cmake"
     VERSION "${GCMAKE_PROJECT_VERSION}"
-    COMPATIBILITY AnyNewerVersion
+    COMPATIBILITY ExactVersion
 )
 
 get_filename_component(current_path ${CMAKE_CURRENT_LIST_DIR} PATH)
