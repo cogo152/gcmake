@@ -13,4 +13,4 @@ cmake   --build build                               \
         --target all test install package           \
         -j 14 --                                    \
 
-dpkg-deb -R build/package/gcmake-build-test-shared-library_1.1.5_amd64.deb build/package-extract
+dpkg-deb -R build/package/gcmake-build-test-shared-library_1.0.6_amd64.deb build/package-extract

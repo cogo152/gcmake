@@ -3,3 +3,5 @@
 3) project_system_package DEB is valid. Check other implementation for RPM etc. (/etc/os-release) maybe format .deb .rpm
 4) check cmake and interface compile options. Interface compile options must override cmake general options.
 5) error message valid parameters not hardcodded, message list
+6) auto packaging
+7) solve jni find problem in cross compile. it is difficult. Maybe a folder which includes jdk for cross

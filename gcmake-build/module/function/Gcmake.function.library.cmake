@@ -7,8 +7,13 @@ function(gcmake_validate_library_structor)
     endif()
 endfunction()
 
-function(gcmake_add_library library_name type)
+function(gcmake_add_library)
     gcmake_validate_library_structor()
+
+    set(list_var "${ARGV}")
+    list(POP_FRONT list_var library_name)
+    list(POP_FRONT list_var library_type)
+    list(LENGTH list_var library_size)
     
     set(include_directory ${CMAKE_CURRENT_SOURCE_DIR}/include)
     set(source_directory ${CMAKE_CURRENT_SOURCE_DIR}/source)
@@ -25,7 +30,7 @@ function(gcmake_add_library library_name type)
         "${source_directory}/*.cpp"
     )
                   
-    add_library(${library_name} ${type})
+    add_library(${library_name} ${library_type})
 
     target_include_directories(${library_name}
         PRIVATE
@@ -39,6 +44,12 @@ function(gcmake_add_library library_name type)
         PRIVATE
             "${sources}"
     )
+
+    if(${library_size} GREATER 0)
+        target_link_libraries(${library_name}
+            ${list_var}
+        )
+    endif()
 
     set_target_properties(${library_name}
         PROPERTIES 

@@ -4,12 +4,18 @@ function(gcmake_validate_test_structor)
     endif()
 endfunction()
 
-function(gcmake_add_test test_name test_link_libraries)
+function(gcmake_add_test)
     gcmake_validate_test_structor()
-    
+
+    set(list_var "${ARGV}")
+    list(POP_FRONT list_var test_name)
+    list(LENGTH list_var library_size)
+
     set(test_directory ${CMAKE_CURRENT_SOURCE_DIR}/test)
     
-    file(GLOB_RECURSE test_sources 
+    file(GLOB_RECURSE test_sources
+    	"${test_directory}/*.h" 
+        "${test_directory}/*.hpp" 
         "${test_directory}/*.s"
         "${test_directory}/*.S"
         "${test_directory}/*.c"
@@ -28,15 +34,36 @@ function(gcmake_add_test test_name test_link_libraries)
             "${test_sources}"
     )
 
-    target_link_libraries(${test_name}
-        PRIVATE 
-            ${test_link_libraries}
-    )
+    if(${library_size} GREATER 0)
+        if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
+            target_link_libraries(${test_name}
+                ${list_var}
+                PUBLIC 
+                    gctest::core
+            )
+        else()
+            target_link_libraries(${test_name}
+                ${list_var}
+            )
+        endif()
+    else()
+        if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
+            target_link_libraries(${test_name}
+                PUBLIC 
+                    gctest::core
+            )
+        endif()
+    endif()
     
     if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
         target_link_libraries(${test_name}
+            ${list_var}
             PUBLIC 
                 gctest::core
+    )
+    else()
+        target_link_libraries(${test_name}
+            ${list_var}
         )
     endif()
     

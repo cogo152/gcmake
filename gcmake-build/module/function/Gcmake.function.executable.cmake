@@ -4,8 +4,12 @@ function(gcmake_validate_executable_structor)
     endif()
 endfunction()
 
-function(gcmake_add_executable executable_name)
+function(gcmake_add_executable)
     gcmake_validate_executable_structor()
+
+    set(list_var "${ARGV}")
+    list(POP_FRONT list_var executable_name)
+    list(LENGTH list_var library_size)
     
     set(source_directory ${CMAKE_CURRENT_SOURCE_DIR}/source)
     
@@ -27,6 +31,12 @@ function(gcmake_add_executable executable_name)
         PRIVATE
             "${sources}"
     )
+
+    if(${library_size} GREATER 0)
+        target_link_libraries(${executable_name}
+            ${list_var}
+        )
+    endif()
 
     set_target_properties(${executable_name} 
         PROPERTIES 

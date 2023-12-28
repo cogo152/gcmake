@@ -1,6 +1,5 @@
-include(Gcmake.function.executable)
 include(Gcmake.function.file)
 include(Gcmake.function.library)
-include(Gcmake.function.link)
-include(Gcmake.function.package)
+include(Gcmake.function.executable)
 include(Gcmake.function.test)
+include(Gcmake.function.package)
