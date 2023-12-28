@@ -54,19 +54,7 @@ function(gcmake_add_test)
             )
         endif()
     endif()
-    
-    if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
-        target_link_libraries(${test_name}
-            ${list_var}
-            PUBLIC 
-                gctest::core
-    )
-    else()
-        target_link_libraries(${test_name}
-            ${list_var}
-        )
-    endif()
-    
+        
     set_target_properties(${test_name}
         PROPERTIES 
             OUTPUT_NAME "${GCMAKE_PROJECT_NAMESPACE}-${test_name}"
