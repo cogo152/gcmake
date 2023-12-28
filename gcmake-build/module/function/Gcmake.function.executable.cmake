@@ -29,7 +29,7 @@ function(gcmake_add_executable)
 
     target_sources(${executable_name}
         PRIVATE
-            "${sources}"
+            ${sources}
     )
 
     if(${library_size} GREATER 0)

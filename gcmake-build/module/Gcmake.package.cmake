@@ -7,6 +7,11 @@ set(CPACK_COMPONENTS_GROUPING ALL_COMPONENTS_IN_ONE)
 set(CPACK_VERBATIM_VARIABLES TRUE)
 set(CPACK_STRIP_FILES TRUE)
 
+get_property(package_dependencies GLOBAL PROPERTY GCMAKE_PROJECT_PACKAGE_DEPENDENCIES)
+list(REMOVE_DUPLICATES package_dependencies)
+string(REPLACE ";" ", " package_dependencies "${package_dependencies}")
+set_property(GLOBAL PROPERTY GCMAKE_PROJECT_PACKAGE_DEPENDENCIES ${package_dependencies})
+
 if(${GCMAKE_CPACK_GENERATOR} STREQUAL "DEB")
     set(CPACK_GENERATOR ${GCMAKE_CPACK_GENERATOR})
     include(Gcmake.package.debian)

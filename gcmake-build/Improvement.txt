@@ -5,3 +5,4 @@
 5) error message valid parameters not hardcodded, message list
 6) auto packaging
 7) solve jni find problem in cross compile. it is difficult. Maybe a folder which includes jdk for cross
+8) ask user cmake build type

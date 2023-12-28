@@ -42,7 +42,7 @@ function(gcmake_add_library)
 
     target_sources(${library_name}
         PRIVATE
-            "${sources}"
+            ${sources}
     )
 
     if(${library_size} GREATER 0)

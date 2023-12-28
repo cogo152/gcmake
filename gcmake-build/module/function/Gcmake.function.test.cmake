@@ -14,8 +14,6 @@ function(gcmake_add_test)
     set(test_directory ${CMAKE_CURRENT_SOURCE_DIR}/test)
     
     file(GLOB_RECURSE test_sources
-    	"${test_directory}/*.h" 
-        "${test_directory}/*.hpp" 
         "${test_directory}/*.s"
         "${test_directory}/*.S"
         "${test_directory}/*.c"
@@ -31,7 +29,7 @@ function(gcmake_add_test)
 
     target_sources(${test_name}
         PRIVATE
-            "${test_sources}"
+            ${test_sources}
     )
 
     if(${library_size} GREATER 0)
