@@ -1,0 +1,1 @@
+gcmake_add_test(${GCMAKE_PROJECT_NAME}_test_1)

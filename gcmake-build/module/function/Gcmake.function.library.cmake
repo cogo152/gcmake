@@ -1,9 +1,9 @@
 function(gcmake_validate_library_structor)
     if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/include")
-        message(FATAL_ERROR "include directory must exist.")
+        message(FATAL_ERROR "include directory must exist : ${CMAKE_CURRENT_SOURCE_DIR}/include")
     endif()
     if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/source")
-        message(FATAL_ERROR "source directory must exist.")
+        message(FATAL_ERROR "source directory must exist : ${CMAKE_CURRENT_SOURCE_DIR}/source")
     endif()
 endfunction()
 

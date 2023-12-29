@@ -9,3 +9,5 @@
 ./gcmake-build-test-cross-shared-library.sh
 
 ./gcmake-build-test-cross-executable.sh
+
+./gcmake-build-test-multi-test.sh

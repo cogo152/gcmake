@@ -1,2 +1,19 @@
 1) Project contact can not be set to unicode
-2) If there is no target install fails
+2) gctest built 2 times? maybe static library but think size
+3) check all test executable inherit gctest compile properties even project is with release. target properties must override everything. analyse it in multi-test 
+project with Gcmake.properties gcmake_asm_flags= -v. Also test asm work with -v when it is .s. c objects are default by cmake settings. should also be imported from
+gctest interface library? because tester classes must not be optimized.
+
+also readelf -n NT_GNU_PROPERTY_TYPE_0 ? both shared gctest and test executable NT_GNU_PROPERTY_TYPE_0
+
+for gctest objects(overrides) :COLLECT_GCC_OPTIONS='-D' '__SOURCE_LOCATION_IMPL__' '-D' 'gctest_shared_library_pre_test_EXPORTS' '-v' '-O3' '-D' 'NDEBUG' '-Wall' 
+'-Wextra' '-O0' '-g' '-fPIC' '-std=gnu++20' '-MD' '-MT' 
+'CMakeFiles/gctest_shared_library_pre_test.dir/usr/source/gctest/core/assertion.cpp.o' '-MF' 
+'CMakeFiles/gctest_shared_library_pre_test.dir/usr/source/gctest/core/assertion.cpp.o.d' 
+'-o' 'CMakeFiles/gctest_shared_library_pre_test.dir/usr/source/gctest/core/assertion.cpp.o' '-c' '-shared-libgcc' 
+'-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/gctest_shared_library_pre_test.dir/usr/source/gctest/core/assertion.cpp.'
+
+COLLECT_GCC_OPTIONS='-fPIC' '-v' '-Wall' '-Wextra' '-O3' '-D' 'NDEBUG' '-shared' 
+'-o' 'libgctest_shared_library_pre_test.so' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'libgctest_shared_library_pre_test.so.'
+
+4) shared gctest does not work. cmake compiles object again.

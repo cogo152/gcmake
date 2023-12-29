@@ -1,6 +1,6 @@
 function(gcmake_validate_executable_structor)
     if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/source")
-        message(FATAL_ERROR "source directory must exist.")
+        message(FATAL_ERROR "source directory must exist  : ${CMAKE_CURRENT_SOURCE_DIR}/source")
     endif()
 endfunction()
 

@@ -6,3 +6,8 @@
 6) auto packaging
 7) solve jni find problem in cross compile. it is difficult. Maybe a folder which includes jdk for cross
 8) ask user cmake build type
+9) build gctest for multiple usage of the subprjects ?
+10) Remove scope requirement from test? built-in PRIVATE?
+11) install package multi target??
+12) exact version or anynewer? note gctest and gcmake-build must be exact version
+13) how to test cross compile ? shared library of gctest must be in qemu? or with parameters

@@ -1,6 +1,6 @@
 function(gcmake_validate_test_structor)
     if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/test")
-        message(FATAL_ERROR "test directory must exist.")
+        message(FATAL_ERROR "test directory must exist : ${CMAKE_CURRENT_SOURCE_DIR}/test")
     endif()
 endfunction()
 
@@ -36,8 +36,8 @@ function(gcmake_add_test)
         if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
             target_link_libraries(${test_name}
                 ${list_var}
-                PUBLIC 
-                    gctest::core
+                PUBLIC
+                    gctest::core_shared
             )
         else()
             target_link_libraries(${test_name}
@@ -47,9 +47,9 @@ function(gcmake_add_test)
     else()
         if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
             target_link_libraries(${test_name}
-                PUBLIC 
-                    gctest::core
-            )
+                PUBLIC
+                    gctest::core_shared
+                )
         endif()
     endif()
         
