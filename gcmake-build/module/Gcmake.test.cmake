@@ -9,5 +9,5 @@ if(${VALID_GCTEST_ENABLE_RESULT} EQUAL -1)
 endif()
 
 if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
-    find_package(gctest-core CONFIG ${GCMAKE_GCTEST_VERSION} REQUIRED)
+    find_package(gctest-core REQUIRED)
 endif()

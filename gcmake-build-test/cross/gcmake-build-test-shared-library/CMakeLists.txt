@@ -2,9 +2,11 @@ get_filename_component(current_path ${CMAKE_SOURCE_DIR} PATH)
 cmake_path(GET current_path PARENT_PATH parent_path)
 
 list(APPEND CMAKE_FIND_ROOT_PATH "${parent_path}/../gcmake-build/build/install")
-find_package(gcmake-build CONFIG 1.0.7 REQUIRED) # do not use gcmake_find_add_package
+list(APPEND CMAKE_FIND_ROOT_PATH "${parent_path}/../../gctest/gctest-core/build/install")
 
-include(Gcmake_Begin)
+find_package(gcmake-build CONFIG 1.1.0 REQUIRED) # do not use gcmake_find_add_package
+
+include(Im_Namen_GOTTes)
 
 cmake_minimum_required(VERSION ${GCMAKE_CMAKE_VERSION})
 
@@ -34,4 +36,4 @@ gcmake_add_test(${GCMAKE_PROJECT_NAME}_lib_test
         ${GCMAKE_PROJECT_NAME}_lib
 )
 
-include(Gcmake_End)
+include(GOTT_sei_Dank)

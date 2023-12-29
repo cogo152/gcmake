@@ -13,6 +13,4 @@ cmake   --build build                               \
         --target all install package                \
         -j 14 --                                    \
 
-dpkg-deb -R build/package/gcmake-build-test-executable_1.0.7_amd64.deb build/package-extract
-
 ./build/gcmake-build-test-executable_exec

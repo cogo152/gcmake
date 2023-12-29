@@ -2,4 +2,4 @@
 
 cd gcmake-build
 
-./build.sh
+./zdelete.sh

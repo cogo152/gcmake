@@ -4,9 +4,9 @@ cmake_path(GET current_path PARENT_PATH parent_path)
 list(APPEND CMAKE_FIND_ROOT_PATH "${parent_path}/../gcmake-build/build/install")
 list(APPEND CMAKE_FIND_ROOT_PATH "${current_path}/gcmake-build-test-shared-library/build/install")
 
-find_package(gcmake-build CONFIG 1.0.7 REQUIRED) # do not use gcmake_find_add_package
+find_package(gcmake-build CONFIG 1.1.0 REQUIRED) # do not use gcmake_find_add_package
 
-include(Gcmake_Begin)
+include(Im_Namen_GOTTes)
 
 cmake_minimum_required(VERSION ${GCMAKE_CMAKE_VERSION})
 
@@ -15,7 +15,7 @@ project(${GCMAKE_PROJECT_NAME} VERSION ${GCMAKE_PROJECT_VERSION} DESCRIPTION ${G
 find_package(Threads REQUIRED) # does not add auto dependency
 find_package(JNI REQUIRED) # does not add auto dependency
 
-gcmake_find_add_package(gcmake-build-test-shared-library CONFIG 1.0.7 REQUIRED) # adds auto dependency
+gcmake_find_add_package(gcmake-build-test-shared-library CONFIG 1.1.0 REQUIRED) # adds auto dependency
 gcmake_find_add_package(gctest-core REQUIRED) # adds auto dependency
 
 gcmake_add_executable(${GCMAKE_PROJECT_NAME}_exec
@@ -32,4 +32,4 @@ gcmake_add_packages(
     x11-apps # add manuel dependency
 )
 
-include(Gcmake_End)
+include(GOTT_sei_Dank)
