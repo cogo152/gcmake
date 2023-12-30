@@ -39,12 +39,6 @@ function(gcmake_add_executable)
         )
     endif()
 
-    set_target_properties(${executable_name} 
-        PROPERTIES 
-            DEBUG_POSTFIX 
-                "d"
-    )
-
     set_target_properties(${executable_name}
         PROPERTIES 
             OUTPUT_NAME "${GCMAKE_PROJECT_NAMESPACE}-${executable_name}"

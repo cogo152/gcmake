@@ -55,12 +55,6 @@ function(gcmake_add_library)
                 "${public_headers}"
     )
 
-    set_target_properties(${library_name} 
-        PROPERTIES 
-            DEBUG_POSTFIX 
-                "d"
-    )
-
     set_target_properties(${library_name}
         PROPERTIES 
             OUTPUT_NAME "${GCMAKE_PROJECT_NAMESPACE}-${library_name}"
