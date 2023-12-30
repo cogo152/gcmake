@@ -11,3 +11,14 @@
 11) install package multi target??
 12) exact version or anynewer? note gctest and gcmake-build must be exact version
 13) how to test cross compile ? shared library of gctest must be in qemu? or with parameters
+14) add include directoy for executable. forexample microos and systemcall library. now only build interface supported. maybe later install into 
+/usr/inc if got table vs. now include library is not validated but supported. find public headers for future.
+Do we need target incl directory build source. it states in all functions.
+15)
+# This is required for auto packaging for system libraries like libc. Normally all test install works with find_rooth_path.
+# For packaging dpkg search libc and c++ version to add .deb dependecy links.
+# I dont understand why cpack tells rpath to dpkg info from CMakeLists.txt
+# Try it with cmake's new version. Maybe Cpack tell rpath from find_root_path/lib like we have done below.
+list(APPEND CMAKE_INSTALL_RPATH "${GCMAKE_CROSSCOMPILING_TOOLCHAIN_ROOT}/lib")
+16) assembler-with-cpp added gm-kernel. maybe in default option by gcmake-build. think and why ? and in toolchain asm compiler
+should be asm or gcc ? maybe add ne paramer asm compiler ask user.

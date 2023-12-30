@@ -33,8 +33,6 @@ function(gcmake_add_library)
     add_library(${library_name} ${library_type})
 
     target_include_directories(${library_name}
-        PRIVATE
-            ${source_directory}
         PUBLIC
             $<BUILD_INTERFACE:${include_directory}>
             $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>

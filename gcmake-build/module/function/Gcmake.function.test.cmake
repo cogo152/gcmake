@@ -22,11 +22,6 @@ function(gcmake_add_test)
     
     add_executable(${test_name})
 
-    target_include_directories(${test_name}
-        PRIVATE
-            ${test_directory}
-    )
-
     target_sources(${test_name}
         PRIVATE
             ${test_sources}

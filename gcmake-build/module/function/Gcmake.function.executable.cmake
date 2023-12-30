@@ -11,6 +11,7 @@ function(gcmake_add_executable)
     list(POP_FRONT list_var executable_name)
     list(LENGTH list_var library_size)
     
+    set(include_directory ${CMAKE_CURRENT_SOURCE_DIR}/include)
     set(source_directory ${CMAKE_CURRENT_SOURCE_DIR}/source)
     
     file(GLOB_RECURSE sources 
@@ -24,7 +25,7 @@ function(gcmake_add_executable)
 
     target_include_directories(${executable_name}
         PRIVATE
-            ${source_directory}
+            ${include_directory}
     )
 
     target_sources(${executable_name}
