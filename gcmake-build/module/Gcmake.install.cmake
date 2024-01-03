@@ -3,8 +3,7 @@ include(CMakePackageConfigHelpers)
 
 get_property(install_targets GLOBAL PROPERTY GCMAKE_PROJECT_INSTALL_TARGETS)
 
-if(TARGET ${install_targets})
-    install(TARGETS ${install_targets}
+install(TARGETS ${install_targets}
         EXPORT "${GCMAKE_PROJECT_NAMESPACE}-${GCMAKE_PROJECT_NAME}Targets"
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
@@ -41,4 +40,3 @@ if(TARGET ${install_targets})
         FILE "${CMAKE_BINARY_DIR}/cmake/${GCMAKE_PROJECT_NAMESPACE}-${GCMAKE_PROJECT_NAME}Targets.cmake"
         NAMESPACE ${GCMAKE_PROJECT_NAMESPACE}::
     )
-endif()

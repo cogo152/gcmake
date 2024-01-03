@@ -1,10 +1,7 @@
-get_filename_component(current_path ${CMAKE_SOURCE_DIR} PATH)
-cmake_path(GET current_path PARENT_PATH parent_path)
+list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build/build/install")
+list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCTEST_HOME}/gctest-core/build-arm64/install")
 
-list(APPEND CMAKE_FIND_ROOT_PATH "${parent_path}/../gcmake-build/build/install")
-list(APPEND CMAKE_FIND_ROOT_PATH "${parent_path}/../../gctest/gctest-core/build/install")
-
-find_package(gcmake-build CONFIG 1.1.0 REQUIRED) # do not use gcmake_find_add_package
+find_package(gcmake-build REQUIRED) # do not use gcmake_find_add_package
 
 include(Im_Namen_GOTTes)
 
