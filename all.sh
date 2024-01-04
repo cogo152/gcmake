@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./gcmake-build.sh
+./zgcmake-release.sh
 
 ./gcmake-build-test-local-static-library.sh
 
