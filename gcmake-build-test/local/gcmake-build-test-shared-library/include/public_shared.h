@@ -6,7 +6,7 @@ extern "C"
 {
 #endif
 
-    int get_c_int();
+    int get_c_int_shared();
 
 #ifdef __cplusplus
 }

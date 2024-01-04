@@ -1,7 +1,10 @@
 #include "public_shared.hpp"
 #include "private_shared.hpp"
 
-int get_cpp_int()
+namespace shared
 {
-    return cpp_int;
+    int get_cpp_int()
+    {
+        return cpp_int;
+    }
 }

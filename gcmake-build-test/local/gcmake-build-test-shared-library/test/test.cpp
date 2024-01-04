@@ -15,7 +15,7 @@ GCTEST_CASE(test_1)
 
     gctest_case_now
     {
-        assert_equal(get_c_int() + get_private_c_int(), 2);
+        assert_equal(get_c_int_shared() + get_private_c_int(), 2);
     }
 };
 
@@ -35,7 +35,7 @@ GCTEST_CASE(test_3)
 
     gctest_case_now
     {
-        assert_equal(get_cpp_int() + get_private_cpp_int(), 4);
+        assert_equal(shared::get_cpp_int() + get_private_cpp_int(), 4);
     }
 };
 

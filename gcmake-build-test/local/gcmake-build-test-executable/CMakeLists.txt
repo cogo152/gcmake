@@ -1,5 +1,9 @@
 list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build/build/install")
+list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCTEST_HOME}/gctest-core/build-local/install")
+list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build-test/local/gcmake-build-test-static-library/build/install")
 list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build-test/local/gcmake-build-test-shared-library/build/install")
+list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build-test/local/gcmake-build-test-interface-library/build/install")
+
 
 find_package(gcmake-build REQUIRED) # do not use gcmake_find_add_package
 
@@ -12,12 +16,15 @@ project(${GCMAKE_PROJECT_NAME} VERSION ${GCMAKE_PROJECT_VERSION} DESCRIPTION ${G
 find_package(Threads REQUIRED) # does not add auto dependency
 find_package(JNI REQUIRED) # does not add auto dependency
 
+gcmake_find_add_package(gcmake-build-test-static-library REQUIRED) # adds auto dependency
 gcmake_find_add_package(gcmake-build-test-shared-library REQUIRED) # adds auto dependency
-gcmake_find_add_package(gctest-core REQUIRED) # adds auto dependency
+gcmake_find_add_package(gcmake-build-test-interface-library REQUIRED) # adds auto dependency
 
 gcmake_add_executable(${GCMAKE_PROJECT_NAME}_exec
-    PRIVATE 
+    PRIVATE
+        gcmake::build-test-static-library_lib 
         gcmake::build-test-shared-library_lib
+        gcmake::build-test-interface-library_lib
     PUBLIC
         ${CMAKE_THREAD_LIBS_INIT}
         ${JNI_LIBRARIES} 

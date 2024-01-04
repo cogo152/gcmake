@@ -1,4 +1,5 @@
 list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build/build/install")
+list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCTEST_HOME}/gctest-core/build-local/install")
 
 find_package(gcmake-build REQUIRED) # do not use gcmake_find_add_package
 
