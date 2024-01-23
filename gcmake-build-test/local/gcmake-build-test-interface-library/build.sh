@@ -3,12 +3,11 @@
 rm -rf build
 
 cmake   --no-warn-unused-cli                        \
-        -DCMAKE_BUILD_TYPE:STRING=Release           \
+        -DOWN_TEST_LOCAL:BOOL=TRUE                  \
         -S.                                         \
         -B build                                    \
         -G "Unix Makefiles"                         \
 
 cmake   --build build                               \
-        --config Release                            \
         --target all test install package           \
-        -j 14 --                                    \
+        -j 14 --        

@@ -1,5 +1,4 @@
 list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build/build/install")
-list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCTEST_HOME}/gctest-core/build-local/install")
 
 find_package(gcmake-build REQUIRED) # do not use gcmake_find_add_package
 
@@ -11,7 +10,6 @@ project(${GCMAKE_PROJECT_NAME} VERSION ${GCMAKE_PROJECT_VERSION} DESCRIPTION ${G
 
 find_package(Threads REQUIRED) # does not add auto dependency
 find_package(JNI REQUIRED) # does not add auto dependency
-gcmake_find_add_package(gctest-core REQUIRED) # adds auto dependency
 
 gcmake_add_library(${GCMAKE_PROJECT_NAME}_lib SHARED
     PUBLIC

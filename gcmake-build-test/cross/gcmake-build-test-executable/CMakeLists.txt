@@ -1,5 +1,4 @@
 list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build/build/install")
-list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCTEST_HOME}/gctest-core/build-arm64/install")
 list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build-test/cross/gcmake-build-test-static-library/build/install")
 list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build-test/cross/gcmake-build-test-shared-library/build/install")
 list(APPEND CMAKE_FIND_ROOT_PATH "$ENV{GCMAKE_HOME}/gcmake-build-test/cross/gcmake-build-test-interface-library/build/install")
@@ -17,9 +16,6 @@ find_package(Threads REQUIRED) # does not add auto dependency
 
 # Could NOT find JNI (missing: JAVA_AWT_LIBRARY JAVA_JVM_LIBRARY
 #find_package(JNI REQUIRED) # does not add auto dependency
-
-gcmake_find_add_package(gcmake-build-test-shared-library REQUIRED) # adds auto dependency
-gcmake_find_add_package(gctest-core REQUIRED) # adds auto dependency
 
 gcmake_find_add_package(gcmake-build-test-static-library REQUIRED) # adds auto dependency
 gcmake_find_add_package(gcmake-build-test-shared-library REQUIRED) # adds auto dependency
