@@ -3,7 +3,7 @@
 rm -rf build
 
 cmake   --no-warn-unused-cli                        \
-        -DOWN_TEST_ARM64:BOOL=TRUE                  \
+        -DDEV_LOCAL:BOOL=TRUE                       \
         -S.                                         \
         -B build                                    \
         -G "Unix Makefiles"                         \

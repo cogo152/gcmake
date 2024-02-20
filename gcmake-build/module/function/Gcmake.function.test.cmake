@@ -31,8 +31,8 @@ function(gcmake_add_test)
         if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
             target_link_libraries(${test_name}
                 ${list_var}
-                PUBLIC
-                    gctest::core_shared
+                PRIVATE
+                    gctest::interface
             )
         else()
             target_link_libraries(${test_name}
@@ -42,8 +42,8 @@ function(gcmake_add_test)
     else()
         if(${GCMAKE_GCTEST_ENABLE} STREQUAL "true")
             target_link_libraries(${test_name}
-                PUBLIC
-                    gctest::core_shared
+                PRIVATE
+                    gctest::interface
                 )
         endif()
     endif()
